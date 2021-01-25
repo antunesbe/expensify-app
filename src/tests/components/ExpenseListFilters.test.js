@@ -66,9 +66,9 @@ test('should handle date changes', () => {
 });
 
 test('should handle date focus changes', () => {
-    wrapper.find('DateRangePicker').prop('onFocusChange')(false);
-    expect(wrapper.state('calendarFocused')).toBeFalsy();
+    wrapper.find('DateRangePicker').prop('onFocusChange')('startDate');
+    expect(wrapper.state('calendarFocused')).toBe('startDate');
 
-    wrapper.find('DateRangePicker').prop('onFocusChange')(true);
-    expect(wrapper.state('calendarFocused')).toBeTruthy();
+    wrapper.find('DateRangePicker').prop('onFocusChange')('endDate');
+    expect(wrapper.state('calendarFocused')).toBe('endDate');
 });
